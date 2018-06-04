@@ -1,4 +1,4 @@
-'use strics';
+'use strict';
 
 const _ = require('../lodash');
 
@@ -50,7 +50,7 @@ exports.factory = function(){
       larger: function(expression){
         if(!_.has(this, 'condition.content'))
           throw new Error('For Matlab condition must be in brackets.');
-        let x1 = this.condition.content.args[0]; // TODO: 'content' means that condition in bracket
+        let x1 = this.condition.content.args[0]; // XXX: 'content' means that condition in bracket
         let x2 = this.condition.content.args[1];
         let y1 = this.trueExpr;
         let y2 = this.falseExpr;
@@ -59,7 +59,7 @@ exports.factory = function(){
       largerEq: function(expression){
         if(!_.has(this, 'condition.content'))
           throw new Error('For Matlab condition must be in brackets.');
-        let x1 = this.condition.content.args[0]; // TODO: 'content' means that condition in bracket
+        let x1 = this.condition.content.args[0]; // 'content' means that condition in bracket
         let x2 = this.condition.content.args[1];
         let y1 = this.trueExpr;
         let y2 = this.falseExpr;

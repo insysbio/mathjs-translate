@@ -1,6 +1,6 @@
-'use strics';
+'use strict';
 
-const _ = require('../lodash');
+// const _ = require('../lodash');
 
 exports.name = 'julia';
 exports.path = 'expression.translator.to';

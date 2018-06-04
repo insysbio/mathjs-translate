@@ -1,4 +1,4 @@
-'use strics';
+'use strict';
 
 const _ = require('../lodash');
 
@@ -61,7 +61,7 @@ exports.factory = function(){
       larger: function(expression){
         if(!_.has(this, 'condition.content'))
           throw new Error('For DBSolve condition must be in brackets.');
-        let x1 = this.condition.content.args[0]; // TODO: 'content' means that condition in bracket
+        let x1 = this.condition.content.args[0]; // XXX: 'content' means that condition in bracket
         let x2 = this.condition.content.args[1];
         let y1 = this.trueExpr;
         let y2 = this.falseExpr;
@@ -70,7 +70,7 @@ exports.factory = function(){
       largerEq: function(expression){
         if(!_.has(this, 'condition.content'))
           throw new Error('For DBSolve condition must be in brackets.');
-        let x1 = this.condition.content.args[0]; // TODO: 'content' means that condition in bracket
+        let x1 = this.condition.content.args[0]; // 'content' means that condition in bracket
         let x2 = this.condition.content.args[1];
         let y1 = this.trueExpr;
         let y2 = this.falseExpr;
@@ -103,9 +103,6 @@ exports.factory = function(){
         let y2 = this.falseExpr;
         return new expression.node.FunctionNode('ifeq', [x1,x2,y1,y2]);
       }
-    },
-    'constantValue': { // XXX: not implemented yet
-      'Infinity': 1e18
     }
   };
 };

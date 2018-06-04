@@ -11,8 +11,8 @@ exports.factory = function(){
   return function(translator){
     if(translator===undefined)
       throw new Error('Translator is undefined.');
-    let translatedName = _.get(translator, 'operatorName.' + this.fn)
-    let clone =  _.cloneDeepWith(this, (value, key) => {
+    let translatedName = _.get(translator, 'operatorName.' + this.fn);
+    let clone = _.cloneDeepWith(this, (value, key) => {
       if(key==='args'){
         return value.map((arg) => arg.translate(translator));
       }

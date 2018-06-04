@@ -1,4 +1,4 @@
-'use strics';
+'use strict';
 
 const _ = require('../lodash');
 
