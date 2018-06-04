@@ -13,6 +13,11 @@
     "expression",
     "math"
   ],
+  "repository": "github:insysbio/mathsjs-translate",
+  "bugs": {
+    "url": "https://github.com/insysbio/mathsjs-translate/issues",
+    "email": "dev@insysbio.com"
+  },
   "author": "Evgeny Metelkin",
   "license": "Apache-2.0",
   "dependencies": {
