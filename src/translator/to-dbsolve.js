@@ -59,7 +59,7 @@ exports.factory = function(){
     },
     'conditionalType': {
       larger: function(expression){
-        if(!_.has(this, 'condition.content'))
+        if(this.condition.content===undefined)
           throw new Error('For DBSolve condition must be in brackets.');
         let x1 = this.condition.content.args[0]; // XXX: 'content' means that condition in bracket
         let x2 = this.condition.content.args[1];
@@ -68,7 +68,7 @@ exports.factory = function(){
         return new expression.node.FunctionNode('ifgt', [x1,x2,y1,y2]);
       },
       largerEq: function(expression){
-        if(!_.has(this, 'condition.content'))
+        if(this.condition.content===undefined)
           throw new Error('For DBSolve condition must be in brackets.');
         let x1 = this.condition.content.args[0]; // 'content' means that condition in bracket
         let x2 = this.condition.content.args[1];
@@ -77,7 +77,7 @@ exports.factory = function(){
         return new expression.node.FunctionNode('ifge', [x1,x2,y1,y2]);
       },
       smallerEq: function(expression){
-        if(!_.has(this, 'condition.content'))
+        if(this.condition.content===undefined)
           throw new Error('For DBSolve condition must be in brackets.');
         let x1 = this.condition.content.args[0]; // 'content' means that condition in bracket
         let x2 = this.condition.content.args[1];
@@ -86,7 +86,7 @@ exports.factory = function(){
         return new expression.node.FunctionNode('ifle', [x1,x2,y1,y2]);
       },
       smaller: function(expression){
-        if(!_.has(this, 'condition.content'))
+        if(this.condition.content===undefined)
           throw new Error('For DBSolve condition must be in brackets.');
         let x1 = this.condition.content.args[0]; // 'content' means that condition in bracket
         let x2 = this.condition.content.args[1];
@@ -95,7 +95,7 @@ exports.factory = function(){
         return new expression.node.FunctionNode('iflt', [x1,x2,y1,y2]);
       },
       equal: function(expression){
-        if(!_.has(this, 'condition.content'))
+        if(this.condition.content===undefined)
           throw new Error('For DBSolve condition must be in brackets.');
         let x1 = this.condition.content.args[0]; // 'content' means that condition in bracket
         let x2 = this.condition.content.args[1];
