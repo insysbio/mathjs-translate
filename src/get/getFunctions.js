@@ -1,6 +1,6 @@
 'use strict';
 
-const _ = require('lodash');
+const _ = require('../lodash');
 
 exports.name = 'getFunctions';
 exports.path = 'expression.node.Node.prototype';

@@ -1,6 +1,6 @@
 'use strics';
 
-const _ = require('lodash');
+const _ = require('../lodash');
 
 exports.name = 'translate';
 exports.path = 'expression.node.Node.prototype';

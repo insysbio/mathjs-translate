@@ -19,6 +19,7 @@
     "lodash": "^4.17.10"
   },
   "devDependencies": {
+    "babel-loader": "^7.1.4",
     "mathjs": "^4.4.1",
     "mocha": "^5.2.0",
     "eslint": "^4.18.1",
