@@ -1,0 +1,29 @@
+{
+  "name": "mathjs-translate",
+  "version": "0.1.0",
+  "description": "Utilites for manipulation of mathjs expressions.",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "mocha",
+    "build": "npm run clean && webpack --config webpack-build.config.js",
+    "clean": "rimraf ./dist",
+    "lint": "eslint --ext .js -o lint.report.html -f html src"
+  },
+  "keywords": [
+    "expression",
+    "math"
+  ],
+  "author": "Evgeny Metelkin",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "lodash": "^4.17.10"
+  },
+  "devDependencies": {
+    "mathjs": "^4.4.1",
+    "mocha": "^5.2.0",
+    "eslint": "^4.18.1",
+    "webpack": "^4.3.0",
+    "webpack-cli": "^2.0.13",
+    "rimraf": "^2.6.2"
+  }
+}

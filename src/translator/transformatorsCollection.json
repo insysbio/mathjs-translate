@@ -1,0 +1,98 @@
+{
+  "from":{
+    "dbsolve": ,
+    "matlab": {
+      "functionNames":{
+        "power": "pow"
+      },
+      "constantNames":{
+        "Inf": "Infinity"
+      }
+    },
+    "sbml": {
+        "functionNames":{
+          "ln": "log",
+          "root": "sqrt",
+          "log": "log10",
+          "ceiling": "ceil",
+          "power": "pow",
+
+          "arccos": "acos",
+          "arcsin": "asin",
+          "arcsec": "asec",
+          "arccsc": "acsc",
+          "arctan": "atan",
+          "arccot": "acot",
+
+          "arccosh": "acosh",
+          "arcsinh": "asinh",
+          "arcsech": "asech",
+          "arccsch": "acsch",
+          "arctanh": "atanh",
+          "arccoth": "acoth"
+        }
+      }
+  },
+  "to": {
+    "julia": {
+      "functionNames": {
+
+      },
+      "constantNames": {
+        "Infinity": "Inf"
+      }
+    },
+    "dbsolve": {
+      "functionNames":{
+      },
+      "constantNames":{
+      }
+    },
+    "matlab": {
+      "functionNames":{
+        "pow": "power"
+      },
+      "constantNames":{
+        "Infinity": "Inf",
+        "PI": "pi",
+        "e": "fun.e",
+        "E": "fun.e",
+        "t": "time"
+      }
+    },
+    "sbml": {
+      "functionNames":{
+        "add": "plus",
+        "subtract": "minus",
+        "multiply": "times",
+        "divide": "divide",
+        "unaryPlus": "plus",
+        "unaryMinus": "minus",
+        "atan": "arctan",
+        "acos": "arccos",
+        "asin": "arcsin",
+        "log": "ln",
+        "sqrt": "root",
+        "log10": "log",
+        "lg": "log",
+        "sign": null,
+        "ceil": "ceiling",
+        "pow": "power",
+        "^": "power",
+        "larger": "gt",
+        "largerEq": "geq",
+        "smallerEq": "leq",
+        "smaller": "lt",
+        "equal" : "eq",
+        "unequal" : "neq"
+      },
+      "constantNames":{
+        "e": "exponentiale",
+        "E": "exponentiale",
+        "PI": "pi",
+        "Infinity": "infinity",
+        "NaN": "notanumber"
+      }
+    }
+  }
+}
