@@ -33,6 +33,45 @@ console.log(functions);
 
 Browser version located in /dist
 
+## Structure of translator
+
+```javascript
+let translator = {
+    functionName: {
+        exp: "exp1", // change name
+        log: function(expression){ // change by function
+            ...
+            return node;
+        }
+    },
+    symbolName: {
+        x: "x1", // change name
+        y: function(expression){ // change by function
+            ...
+            return node;
+        }
+    },
+    operatorName: {
+        pow: "pow1", // change name
+        add: function(expression){ // change by function
+            ...
+            return node;
+        }
+    },
+    constant: function(expression){ // change by function
+        ...
+        return node;
+    },
+    conditionalType: {
+        larger: function(expression){ // change by function
+            ...
+            return node;
+        }
+    }
+};
+```
+
+
 ## Author
 
  - Evgeny Metelkin @metelkin
