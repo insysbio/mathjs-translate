@@ -38,7 +38,7 @@ describe('Test getSomething for expression: ' + examp1, function(){
   });
 });
 
-let examp2 = 'a*b*c+d + fun1(a,b) + fun2(c) + fun3(d)';
+let examp2 = 'a*b*c+d + fun1(a,b) + fun2(fun3(z)) + fun3(d)';
 let examp_operators = 'x^(y*z) + (x*y)^z + x^y';
 describe('Test translation of expression: ' + examp2, () => {
   it('Translate symbols', () => {
@@ -52,7 +52,7 @@ describe('Test translation of expression: ' + examp2, () => {
     };
     assert.equal(
       parsed.translate(translator).toString(),
-      'x * y * z + d + fun1(x, y) + fun2(z) + fun3(d)'
+      'x * y * z + d + fun1(x, y) + fun2(fun3(z)) + fun3(d)'
     );
   });
 
@@ -65,12 +65,13 @@ describe('Test translation of expression: ' + examp2, () => {
           this.fn.name = 'log';
           return this;
         },
-        fun2: 'exp'
+        fun2: 'exp',
+        fun3: 'sin'
       }
     };
     assert.equal(
       parsed.translate(translator).toString(),
-      'a * b * c + d + log(b, a) + exp(c) + fun3(d)'
+      'a * b * c + d + log(b, a) + exp(sin(z)) + sin(d)'
     );
   });
 
@@ -91,10 +92,10 @@ describe('Test translation of expression: ' + examp2, () => {
 });
 
 let examp3 = 'a*exp(-0.5*b) + ln(c) + fabs(d) + max2(x,y) + min2(x,y) + max3(x,y,z) + min3(x,y,z)';
-let examp3_tern = 'ifgt(x,y,1,2) + ifge(x,y,1,2) + ifle(x,y,1,2) + iflt(x,y,1,2) + ifeq(x,y,1,2)';
+let examp3_tern = 'ifgt(x,y,1,2) + ifge(x,y,1,2) + ifle(x,y,1,2) + iflt(x,y,1,2) + ifeq(x,y,1,2) + ifgt(1, 2, ifgt(1,2,x,y), y*y)';
 let examp4 = 'a*exp(-0.5*b) + log(c) + abs(d) + max(x,y) + min(x,y) + max(x,y,z) + min(x,y,z) + pi + PI + e + E + Infinity - Infinity';
 let examp4_tern1 = '((x > y) ? 1 : 2) + ((x >= y) ? 1 : 2) + ((x <= y) ? 1 : 2) + ((x < y) ? 1 : 2) + ((x == y) ? 1 : 2)';
-let examp4_tern2 = '(x > y) ? 1 : 2';
+let examp4_tern2 = '(1 > 2) ? ((1 > 2) ? x : y) : (y * y)';
 let examp4_log = 'log(x*y, z*2)';
 
 describe('Test translation "dbsolve".', () => {
@@ -110,7 +111,7 @@ describe('Test translation "dbsolve".', () => {
     let parsed = math.parse(examp3_tern);
     assert.equal(
       parsed.translate(math.expression.translator.from.dbsolve).toString(),
-      '((x > y) ? 1 : 2) + ((x >= y) ? 1 : 2) + ((x <= y) ? 1 : 2) + ((x < y) ? 1 : 2) + ((x == y) ? 1 : 2)'
+      '((x > y) ? 1 : 2) + ((x >= y) ? 1 : 2) + ((x <= y) ? 1 : 2) + ((x < y) ? 1 : 2) + ((x == y) ? 1 : 2) + ((1 > 2) ? ((1 > 2) ? x : y) : (y * y))'
     );
   });
 
@@ -135,7 +136,7 @@ describe('Test translation "dbsolve".', () => {
     // console.log(JSON.stringify(parsed, null, 4));
     assert.equal(
       parsed.translate(math.expression.translator.to.dbsolve).toString(),
-      'ifgt(x, y, 1, 2)'
+      'ifgt(1, 2, (ifgt(1, 2, x, y)), (y * y))'
     );
   });
 

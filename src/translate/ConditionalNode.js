@@ -11,7 +11,11 @@ exports.factory = function(){
     if(translator===undefined)
       throw new Error('Translator is undefined.');
     let translatedType = _.get(translator, 'conditionalType.' + this.condition.content.fn);
-    let clone = _.cloneDeep(this);
+    let clone = _.cloneDeepWith(this, (value, key) => {
+      if(['condition', 'trueExpr', 'falseExpr'].indexOf(key)!==-1){
+        return value.translate(translator);
+      }
+    });
 
     if(typeof translatedType==='string'){
       throw new Error('Translation by String is not supported for ConditionalNode.');

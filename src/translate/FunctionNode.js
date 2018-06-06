@@ -6,7 +6,7 @@ exports.name = 'translate';
 exports.path = 'expression.node.FunctionNode.prototype';
 exports.math = true;
 exports.factory = function(){
-  const expression = arguments[4].expression; // collection of nodes
+  const expression = arguments[4].expression; // math.expression
 
   return function(translator){
     if(translator===undefined)
