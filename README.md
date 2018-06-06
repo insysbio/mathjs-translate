@@ -76,7 +76,7 @@ let translator = {
 
  - Evgeny Metelkin @metelkin
 
- ## Copyright
+## Copyright
 
 InSysBio, Moscow, 2017-2018
 http://insysbio.com

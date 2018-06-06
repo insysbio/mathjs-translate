@@ -13,9 +13,9 @@
     "expression",
     "math"
   ],
-  "repository": "github:insysbio/mathsjs-translate",
+  "repository": "github:insysbio/mathjs-translate",
   "bugs": {
-    "url": "https://github.com/insysbio/mathsjs-translate/issues",
+    "url": "https://github.com/insysbio/mathjs-translate/issues",
     "email": "dev@insysbio.com"
   },
   "author": "Evgeny Metelkin",
