@@ -6,11 +6,13 @@ exports.name = 'getSymbols';
 exports.path = 'expression.node.Node.prototype';
 exports.factory = function(){
   return function(){
-    // console.log(JSON.stringify(this));
+    //console.log(JSON.stringify(this, null, 2));
     let symbols = [];
     this.traverse(function(node){
-      if(node.isSymbolNode){
-        symbols.push(node.name);
+      if(node.args){
+        node.args
+          .filter((arg) => arg.isSymbolNode)
+          .forEach((arg) => symbols.push(arg.name));
       }
     });
 
