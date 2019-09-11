@@ -1,3 +1,4 @@
+/* global describe, it */
 'use strict';
 
 let math = require('mathjs');
@@ -14,6 +15,14 @@ describe('Test getSomething for expression: ' + examp1, function(){
       parsed.getSymbols(),
       ['x', 'y', 'z', 'g']
     );
+  });
+
+  it('getSymbols for "x":', () => {
+    assert.deepEqual(math.parse('x').getSymbols(), ['x']);
+  });
+
+  it('getSymbols for "-x":', () => {
+    assert.deepEqual(math.parse('-x').getSymbols(), ['x']);
   });
 
   it('getConstants:', () => {

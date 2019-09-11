@@ -8,11 +8,9 @@ exports.factory = function(){
   return function(){
     //console.log(JSON.stringify(this, null, 2));
     let symbols = [];
-    this.traverse(function(node){
-      if(node.args){
-        node.args
-          .filter((arg) => arg.isSymbolNode)
-          .forEach((arg) => symbols.push(arg.name));
+    this.traverse(function(node, path){
+      if(node.isSymbolNode && path!=='fn'){
+        symbols.push(node.name);
       }
     });
 
