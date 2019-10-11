@@ -21,7 +21,7 @@
   "author": "Evgeny Metelkin",
   "license": "Apache-2.0",
   "dependencies": {
-    "lodash": "^4.17.11"
+    "lodash": "^4.17.15"
   },
   "devDependencies": {
     "babel-loader": "^7.1.4",
