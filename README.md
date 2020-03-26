@@ -78,5 +78,5 @@ let translator = {
 
 ## Copyright
 
-InSysBio, Moscow, 2017-2019
+InSysBio, Moscow, 2017-2020
 http://insysbio.com
