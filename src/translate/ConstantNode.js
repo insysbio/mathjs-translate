@@ -8,9 +8,7 @@ exports.math = true;
 exports.factory = function(){
   const expression = arguments[4].expression; // collection of nodes
 
-  return function(translator){
-    if(translator===undefined)
-      throw new Error('Translator is undefined.');
+  return function(translator = {}){
     let translatedName = _.get(translator, 'constant');
     let clone = _.cloneDeep(this);
 

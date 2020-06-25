@@ -201,4 +201,28 @@ describe('Test translation "julia".', () => {
   });
 });
 
+describe('Test translation of ternary operators', () => {
+  it('Translate "condition"', () => {
+    let parsed = math.parse('x > fun(y, z) ? 1 : 2');
+    assert.equal(
+      parsed.translate({symbolName: {x: 'x1', y: 'y1', z: 'z1'}}).toString(),
+      '(x1 > fun(y1, z1)) ? 1 : 2'
+    );
+  });
+  it('Translate "trueExpr"', () => {
+    let parsed = math.parse('true ? (x + y) : 2');
+    assert.equal(
+      parsed.translate({symbolName: {x: 'x1', y: 'y1', z: 'z1'}}).toString(),
+      'true ? (x1 + y1) : 2'
+    );
+  });
+  it('Translate "falseExpr"', () => {
+    let parsed = math.parse('false ? 1 : x/y');
+    assert.equal(
+      parsed.translate({symbolName: {x: 'x1', y: 'y1', z: 'z1'}}).toString(),
+      'false ? 1 : (x1 / y1)'
+    );
+  });
+});
+
 // console.log(math.parse('x^y'));
