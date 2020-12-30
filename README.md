@@ -1,3 +1,4 @@
+[![Autotests](https://github.com/insysbio/mathjs-translate/workflows/Autotests/badge.svg)](https://github.com/insysbio/mathjs-translate/actions)
 [![GitHub npm](https://img.shields.io/npm/v/mathjs-translate/latest.svg)](https://www.npmjs.com/package/mathjs-translate)
 [![GitHub license](https://img.shields.io/github/license/insysbio/mathjs-translate.svg)](https://github.com/insysbio/mathjs-translate/blob/master/LICENSE)
 

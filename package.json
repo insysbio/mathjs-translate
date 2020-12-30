@@ -1,6 +1,6 @@
 {
   "name": "mathjs-translate",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "description": "Utilites for manipulation of mathjs expressions.",
   "main": "src/index.js",
   "scripts": {
@@ -30,7 +30,7 @@
     "mathjs": "^5.10.3",
     "mocha": "^7.1.1",
     "rimraf": "^2.7.1",
-    "webpack": "^4.42.1",
+    "webpack": "^4.44.2",
     "webpack-cli": "^3.3.11"
   }
 }
