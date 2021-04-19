@@ -1,7 +1,5 @@
 'use strict';
 
-// const _ = require('../lodash');
-
 exports.name = 'julia';
 exports.path = 'expression.translator.to';
 exports.factory = function(){

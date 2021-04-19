@@ -1,7 +1,5 @@
 'use strict';
 
-const _ = require('../lodash');
-
 exports.name = 'translate';
 exports.path = 'expression.node.ConstantNode.prototype';
 exports.math = true;
@@ -9,18 +7,18 @@ exports.factory = function(){
   const expression = arguments[4].expression; // collection of nodes
 
   return function(translator = {}){
-    let translatedName = _.get(translator, 'constant');
-    let clone = _.cloneDeep(this);
+    let clone = this.clone();
 
-    if(typeof translatedName==='string'){
+    let translatedName = translator.constant;
+    if (typeof translatedName === 'string'){
       throw new Error('Translation by String is not supported for ConstantNode.');
-    }else if(typeof translatedName==='function'){
+    } else if (typeof translatedName === 'function'){
       let translated = translatedName.call(clone, expression);
-      if(translated===undefined){
+      if (translated === undefined){
         throw new Error('Translation by Function returns "undefined".');
       }
       return translated;
-    }else{
+    } else {
       return clone;
     }
   };

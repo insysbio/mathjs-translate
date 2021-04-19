@@ -1,18 +1,16 @@
 'use strict';
 
-const _ = require('../lodash');
-
 exports.name = 'getOperators';
 exports.path = 'expression.node.Node.prototype';
 exports.factory = function(){
   return function(){
-    let operators = [];
-    this.traverse(function(node){
-      if(node.isOperatorNode){
-        operators.push(node.op);
-      }
-    });
+    let operatorNames = this.filter((node, path, parent) => {
+      return node.isOperatorNode;
+    }).reduce((acc, node) => {
+      if (acc.indexOf(node.op) === -1) acc.push(node.op)
+      return acc
+    }, []);
 
-    return _.uniq(operators);
+    return operatorNames;
   };
 };

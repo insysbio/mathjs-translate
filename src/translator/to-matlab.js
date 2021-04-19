@@ -1,7 +1,5 @@
 'use strict';
 
-const _ = require('../lodash');
-
 exports.name = 'matlab';
 exports.path = 'expression.translator.to';
 exports.factory = function(){

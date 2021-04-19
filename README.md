@@ -3,7 +3,7 @@
 [![GitHub license](https://img.shields.io/github/license/insysbio/mathjs-translate.svg)](https://github.com/insysbio/mathjs-translate/blob/master/LICENSE)
 
 # mathjs-translate
-Utilites for manipulation of mathjs http://mathjs.org/ expressions.
+Utilities for manipulation of mathjs http://mathjs.org/ expressions.
 
 ## Installation
 
@@ -82,5 +82,5 @@ let translator = {
 
 ## Copyright
 
-InSysBio, Moscow, 2017-2020
+InSysBio, Moscow, 2017-2021
 http://insysbio.com
