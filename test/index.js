@@ -1,7 +1,9 @@
 /* global describe, it */
 'use strict';
 
-let math = require('mathjs');
+//let math = require('mathjs');
+const { create, all } = require('mathjs');
+const math = create(all);
 math.import(require('../src/index'));
 
 const assert = require('assert');
