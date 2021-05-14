@@ -1,6 +1,6 @@
 {
   "name": "mathjs-translate",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Utilities for manipulation of mathjs expressions.",
   "main": "src/index.js",
   "scripts": {
@@ -20,6 +20,9 @@
   "author": "Evgeny Metelkin",
   "license": "Apache-2.0",
   "dependencies": {},
+  "peerDependencies": {
+    "mathjs": "5.x - 6.x"
+  },
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
